@@ -43,3 +43,49 @@ import RNGoogleGeometry from 'react-native-google-geometry';
 RNGoogleGeometry;
 ```
   
+```js
+// with only point and polygon
+componentDidMount() {
+  const polygon = [
+	{ lat: 11.59263082822001, lng: 104.88914139568806 },
+	{ lat: 11.594118314815121, lng: 104.88916050642729 },
+	{ lat: 11.59418958522588, lng: 104.8908070474863 },
+	{ lat: 11.592780923826437, lng: 104.89092439413069 },
+  ]; 
+
+  let point = {
+    lat: 2.951269758090068,
+    lng: 101.964111328125
+  };
+
+  RNGoogleGeometry.containsLocation(point, polygon)
+    .then(() => console.log('point is within polygon'))
+    .catch(() => console.log('point is NOT within polygon'))
+}
+```
+
+```js
+// to calculate area of polygon
+componentDidMount() {
+  const polygon = [
+	{ lat: 11.59263082822001, lng: 104.88914139568806 },
+	{ lat: 11.594118314815121, lng: 104.88916050642729 },
+	{ lat: 11.59418958522588, lng: 104.8908070474863 },
+	{ lat: 11.592780923826437, lng: 104.89092439413069 },
+  ]; 
+
+  RNGoogleGeometry.computeArea(polygon).then(area => console.log(area));
+}
+```
+
+```js
+// to calculate distance between two ponint
+componentDidMount() {
+  const p1 = { lat: 11.59263082822001, lng: 104.88914139568806 };
+  const p2 = { lat: 11.59263082822001, lng: 104.88914139568806 };
+
+  RNGoogleGeometry.computeDistanceBetween(p1, p2).then(distance => console.log(distance));
+}
+```
+
+

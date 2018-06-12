@@ -24,14 +24,14 @@ RCT_EXPORT_METHOD(
                   callback:(RCTResponseSenderBlock)callback
 ) {
   CLLocationCoordinate2D locationPoint = CLLocationCoordinate2DMake(
-    [[point objectForKey:@"lat"] doubleValue],
-    [[point objectForKey:@"lng"] doubleValue]
+    [[point objectForKey:@"latitude"] doubleValue],
+    [[point objectForKey:@"longitude"] doubleValue]
   );
   GMSMutablePath *polygonPath = [GMSMutablePath path];
   for(int i = 0; i < [polygon count]; i++) {
     [polygonPath addCoordinate:CLLocationCoordinate2DMake(
-      [[polygon[i] objectForKey:@"lat"] doubleValue],
-      [[polygon[i] objectForKey:@"lng"] doubleValue]
+      [[polygon[i] objectForKey:@"latitude"] doubleValue],
+      [[polygon[i] objectForKey:@"longitude"] doubleValue]
     )];
   }
   if(GMSGeometryContainsLocation(locationPoint, (GMSPath *)polygonPath, NO)) {
@@ -47,12 +47,12 @@ RCT_EXPORT_METHOD(
                   callback:(RCTResponseSenderBlock)callback
 ) {
   CLLocationCoordinate2D p1 = CLLocationCoordinate2DMake(
-    [[point1 objectForKey:@"lat"] doubleValue],
-    [[point1 objectForKey:@"lng"] doubleValue]
+    [[point1 objectForKey:@"latitude"] doubleValue],
+    [[point1 objectForKey:@"longitude"] doubleValue]
   );
   CLLocationCoordinate2D p2 = CLLocationCoordinate2DMake(
-    [[point2 objectForKey:@"lat"] doubleValue],
-    [[point2 objectForKey:@"lng"] doubleValue]
+    [[point2 objectForKey:@"latitude"] doubleValue],
+    [[point2 objectForKey:@"longitude"] doubleValue]
   );
   NSNumber *distance = [NSNumber numberWithDouble:GMSGeometryDistance(p1, p2)];
   callback(@[distance]);
@@ -65,8 +65,8 @@ RCT_EXPORT_METHOD(
   GMSMutablePath *polygonPath = [GMSMutablePath path];
   for(int i = 0; i < [polygon count]; i++) {
     [polygonPath addCoordinate:CLLocationCoordinate2DMake(
-      [[polygon[i] objectForKey:@"lat"] doubleValue],
-      [[polygon[i] objectForKey:@"lng"] doubleValue]
+      [[polygon[i] objectForKey:@"latitude"] doubleValue],
+      [[polygon[i] objectForKey:@"longitude"] doubleValue]
     )];
   }
   NSNumber *area = [NSNumber numberWithDouble:GMSGeometryArea((GMSPath *)polygonPath)];

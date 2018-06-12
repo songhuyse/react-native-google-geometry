@@ -52,15 +52,15 @@ RNGoogleGeometry;
 // with only point and polygon
 componentDidMount() {
   const polygon = [
-	{ lat: 11.59263082822001, lng: 104.88914139568806 },
-	{ lat: 11.594118314815121, lng: 104.88916050642729 },
-	{ lat: 11.59418958522588, lng: 104.8908070474863 },
-	{ lat: 11.592780923826437, lng: 104.89092439413069 },
+	{ latitude: 11.59263082822001, longitude: 104.88914139568806 },
+	{ latitude: 11.594118314815121, longitude: 104.88916050642729 },
+	{ latitude: 11.59418958522588, longitude: 104.8908070474863 },
+	{ latitude: 11.592780923826437, longitude: 104.89092439413069 },
   ]; 
 
   let point = {
-    lat: 2.951269758090068,
-    lng: 101.964111328125
+    latitude: 2.951269758090068,
+    longitude: 101.964111328125
   };
 
   RNGoogleGeometry.containsLocation(point, polygon)
@@ -73,10 +73,10 @@ componentDidMount() {
 // to calculate area of polygon
 componentDidMount() {
   const polygon = [
-	{ lat: 11.59263082822001, lng: 104.88914139568806 },
-	{ lat: 11.594118314815121, lng: 104.88916050642729 },
-	{ lat: 11.59418958522588, lng: 104.8908070474863 },
-	{ lat: 11.592780923826437, lng: 104.89092439413069 },
+	{ latitude: 11.59263082822001, longitude: 104.88914139568806 },
+	{ latitude: 11.594118314815121, longitude: 104.88916050642729 },
+	{ latitude: 11.59418958522588, longitude: 104.8908070474863 },
+	{ latitude: 11.592780923826437, longitude: 104.89092439413069 },
   ]; 
 
   RNGoogleGeometry.computeArea(polygon).then(area => console.log(area));
@@ -86,8 +86,8 @@ componentDidMount() {
 ```js
 // to calculate distance between two ponint
 componentDidMount() {
-  const p1 = { lat: 11.59263082822001, lng: 104.88914139568806 };
-  const p2 = { lat: 11.59263082822001, lng: 104.88914139568806 };
+  const p1 = { latitude: 11.59263082822001, longitude: 104.88914139568806 };
+  const p2 = { latitude: 11.59263082822001, longitude: 104.88914139568806 };
 
   RNGoogleGeometry.computeDistanceBetween(p1, p2).then(distance => console.log(distance));
 }

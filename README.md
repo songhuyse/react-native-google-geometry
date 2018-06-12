@@ -5,7 +5,7 @@
 
 `$ npm install react-native-google-geometry --save`
 
-### Mostly automatic installation
+### Mostly automatic installation ( working on android )
 
 `$ react-native link react-native-google-geometry`
 
@@ -14,10 +14,13 @@
 
 #### iOS
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-google-geometry` and add `RNGoogleGeometry.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNGoogleGeometry.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+1. `Copies` everything in ios folder and `Paste` into ➜ folder `[your project's name]/ios`
+2. Open Podfile edit `target [your target name]`
+3. Open `Terminal` ➜ cd your path `[your project's name]/ios`
+4. Run command `pod install`
+5. After success install, close XCode and open with extension `[your project's name].xcworkspace`
+6. Click on your project's name go to `Build Settings` find `User Header Search Paths` 
+7. Paste `${SRCROOT}/../node_modules/react-native/React/Base` into `Debug` and `Release`
 
 #### Android
 

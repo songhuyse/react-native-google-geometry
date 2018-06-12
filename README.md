@@ -19,8 +19,10 @@
 3. Open `Terminal` ➜ cd your path `[your project's name]/ios`
 4. Run command `pod install`
 5. After success install, close XCode and open with extension `[your project's name].xcworkspace`
-6. Click on your project's name go to `Build Settings` find `User Header Search Paths` 
-7. Paste `${SRCROOT}/../node_modules/react-native/React/Base` into `Debug` and `Release`
+6. Click on your project's name go to `Build Settings`
+7. find `Other Linker Flags` ➜ add `$(inherited)`
+8. and then find `User Header Search Paths`
+9. Paste `${SRCROOT}/../node_modules/react-native/React/Base` into `Debug` and `Release`
 
 #### Android
 

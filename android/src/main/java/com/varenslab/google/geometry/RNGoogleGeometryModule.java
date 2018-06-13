@@ -37,8 +37,8 @@ public class RNGoogleGeometryModule extends ReactContextBaseJavaModule {
         Callback completionCallback) {
 
       LatLng locationPoint = new LatLng(
-          point.getDouble("lat"),
-          point.getDouble("lng")
+          point.getDouble("latitude"),
+          point.getDouble("longitude")
       );
 
       List<LatLng> polygonList = new ArrayList<>();
@@ -47,8 +47,8 @@ public class RNGoogleGeometryModule extends ReactContextBaseJavaModule {
         ReadableMap vertex = polygon.getMap(i);
         polygonList.add(
             new LatLng(
-              vertex.getDouble("lat"),
-              vertex.getDouble("lng")
+              vertex.getDouble("latitude"),
+              vertex.getDouble("longitude")
             )
         );
       }
@@ -69,8 +69,8 @@ public class RNGoogleGeometryModule extends ReactContextBaseJavaModule {
         ReadableMap vertex = polygon.getMap(i);
         polygonList.add(
           new LatLng(
-            vertex.getDouble("lat"),
-              vertex.getDouble("lng")
+            vertex.getDouble("latitude"),
+              vertex.getDouble("longitude")
           )
         );
       }
@@ -83,8 +83,8 @@ public class RNGoogleGeometryModule extends ReactContextBaseJavaModule {
       ReadableMap point2,
       Callback result
     ) {
-      LatLng p1 = new LatLng(point1.getDouble("lat"), point1.getDouble("lng"));
-      LatLng p2 = new LatLng(point2.getDouble("lat"), point2.getDouble("lng"));
+      LatLng p1 = new LatLng(point1.getDouble("latitude"), point1.getDouble("longitude"));
+      LatLng p2 = new LatLng(point2.getDouble("latitude"), point2.getDouble("longitude"));
       result.invoke(SphericalUtil.computeDistanceBetween(p1, p2));
     }
 }
